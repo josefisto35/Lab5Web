@@ -512,14 +512,14 @@ Selanjutnya isikan kode sebagai berikut
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validasi Form Dengan Java Script</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-
 <body>
-
     <div class="container">
         <form name="formPendaftaran" action="daftar.php" method="post" onsubmit="return validateForm()">
             <div class="form-group">
@@ -542,7 +542,7 @@ Selanjutnya isikan kode sebagai berikut
             </div>
             <div class="form-group">
                 <label>Alamat</label>
-                <textarea cols="40" rows="5" type="alamat" name="alamat" placeholder="Alamat Lengkap" class="form-control"></textarea>
+                <textarea cols="40" rows="5" name="alamat" placeholder="Alamat Lengkap" class="form-control"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -585,4 +585,18 @@ Ouput :
 
 <p align="center">
 	<img src="SS/qna/all_form_alert.png" alt="alert">
+</p>
+
+## Validasi HTML
+
+Memvalidasi dokumen html tugas dengan mengakses http://validator.w3.org
+
+Hasil :
+
+<p align="center">
+	<img src="SS/validasi_w3c/choose.png" alt="bfore_check">
+</p>
+
+<p align="center">
+	<img src="SS/validasi_w3c/after_check_cmplted.png" alt="after_check">
 </p>
