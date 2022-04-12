@@ -504,3 +504,85 @@ Output :
 
 ## Pertanyaan dan Tugas
 1. Buat script untuk melakukan validasi pada isian form.
+
+Buat folder baru dengan nama **lab5_qna** dan buat file dengan nama **lab5_valid_form.html**
+
+Selanjutnya isikan kode sebagai berikut 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Validasi Form Dengan Java Script</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form name="formPendaftaran" action="daftar.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="nama" placeholder="Nama lengkap" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email Aktif" class="form-control">
+                <small id="emailHelp" class="form-text text-muted">Email Akan Digunakan Untuk Mengirimkan Notifikasi.</small>
+            </div>
+            <div class="form-group">
+                <label>Jurusan</label>
+                <select name="jurusan" class="form-control">
+                        <option value="0">Pilih Jurusan</option>
+                        <option value="1">Jurusan Informatika</option>
+                        <option value="2">Jurusan Teknik Komputer Jaringan</option>
+                        <option value="3">Jurusan Multimedia</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <textarea cols="40" rows="5" type="alamat" name="alamat" placeholder="Alamat Lengkap" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            if (document.forms["formPendaftaran"]["nama"].value == "") {
+                alert("Nama Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["nama"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["email"].value == "") {
+                alert("Email Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["email"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["jurusan"].selectedIndex < 1) {
+                alert("Pilih Jurusan.");
+                document.forms["formPendaftaran"]["jurusan"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["alamat"].value == "") {
+                alert("Alamat Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["alamat"].focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+Dalam setiap kondisi yang ada pada skrip di atas telah di sesuaikan urutan data tersebut dan saling memanggil ataupun merespon satu sama lain dan setiap kondisi di saat pengisian form validasi.
+
+Ouput :
+
+<p align="center">
+	<img src="SS/qna/all_form_js.png" alt="all_form">
+</p>
+
+<p align="center">
+	<img src="SS/qna/all_form_alert.png" alt="alert">
+</p>
